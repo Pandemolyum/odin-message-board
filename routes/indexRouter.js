@@ -20,6 +20,7 @@ const messages = [
     },
 ];
 
+// Routing
 indexRouter.get("/", (req, res) => {
     res.render("index", { messages: messages });
 });
@@ -36,6 +37,13 @@ indexRouter.post("/new", (req, res) => {
     }); // req.body contains key-value pairs of data submitted in the request body. Populated by express.urlencoded() or express.json().
 
     res.redirect("/");
+});
+
+indexRouter.get("/messages/:id", (req, res) => {
+    res.render("message", {
+        message: messages[req.params.id],
+        id: req.params.id,
+    });
 });
 
 module.exports = indexRouter;
