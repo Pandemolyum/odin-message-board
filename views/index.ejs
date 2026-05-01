@@ -9,12 +9,13 @@
 
 <body>
     <h1>Message Board</h1>
-    <a href="/new"><button>New Message</button></a>
+    <a href="/new"><button class="new-button">New Message</button></a>
     <% messages.forEach((message)=> { %>
     <div class="message">
-        <h2><%= message.user %></h2>
-        <p><%= message.text %></p>
-        <span><%= message.added %></span>
+        <h2 class="user"><%= message.user %></h2>
+        <p class="text"><%= message.text %></p>
+        <p class="date"><%= message.added %></p>
+        <button class="open-button">Open Message</button>
     </div>
     <% }); %>
 </body>
