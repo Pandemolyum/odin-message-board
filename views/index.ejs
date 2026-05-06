@@ -10,12 +10,12 @@
 <body>
     <h1>Message Board</h1>
     <a href="/new"><button class="new-button">New Message</button></a>
-    <% messages.forEach((message, id)=> { %>
-    <div class="message">
-        <h2 class="user"><%= message.user %></h2>
-        <p class="text"><%= message.text %></p>
-        <p class="date"><%= message.added %></p>
-        <a href="/messages/<%= id %>"><button class="open-button">Open Message</button></a>
+    <% messages.forEach((message)=> { %>
+    <div class="message" id=<%= message.id %>>
+        <h2 class="user"><%= message.name %></h2>
+        <p class="text"><%= message.message %></p>
+        <p class="date"><%= message.created %></p>
+        <a href="/messages/<%= message.id %>"><button class="open-button">Open Message</button></a>
     </div>
     <% }); %>
 </body>
