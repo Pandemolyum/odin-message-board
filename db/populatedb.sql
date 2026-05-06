@@ -4,7 +4,8 @@
 CREATE TABLE IF NOT EXISTS messages (
     if INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     name VARCHAR ( 32 ),
-    message VARCHAR ( 1024 )
+    message VARCHAR ( 1024 ),
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Insert messages into the table
