@@ -17,6 +17,11 @@ async function insertMessage(name, message) {
     ]);
 }
 
+async function getMessageCount() {
+    const res = await pool.query("SELECT COUNT(*) FROM messages");
+    return res.rows[0].count;
+}
+
 async function openMessage(id) {
     const { rows } = await pool.query("SELECT * FROM messages WHERE id=$1", [
         id,
@@ -36,5 +41,6 @@ async function updateMessage(id, name, message) {
 module.exports = {
     getAllMessages,
     insertMessage,
+    getMessageCount,
     openMessage,
 };
